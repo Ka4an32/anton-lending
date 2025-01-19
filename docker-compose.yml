@@ -1,0 +1,7 @@
+services:
+  web-nginx:
+    image: nginx_server:0.1
+    container_name: dev_server
+    ports:
+      - "80:80"
+    restart: unless-stopped

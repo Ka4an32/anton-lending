@@ -1,0 +1,28 @@
+@use "@/mixins";
+
+.steave-container {
+  position: absolute;
+  width: 142px;
+  height: 81px;
+
+  top: 5%;
+  left: -1%;
+
+  @include mixins.media("smx") {
+    height: 108px;
+    width: 182px;
+  }
+
+  @include mixins.media("md") {
+    height: 158px;
+    width: 245px;
+    top: 7%;
+  }
+
+  @include mixins.media("xl") {
+    height: 171px;
+    width: 287px;
+    left: -2%;
+    top: 12%;
+  }
+}

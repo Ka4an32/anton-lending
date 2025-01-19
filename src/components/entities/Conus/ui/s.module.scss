@@ -1,0 +1,32 @@
+@use "@/mixins";
+
+.conus-container {
+  position: absolute;
+
+  height: 90px;
+  width: 137px;
+
+  right: 2%;
+  top: 0;
+
+  z-index: -1;
+  transform: rotate(50deg);
+
+  @include mixins.media("smx") {
+    height: 120px;
+    width: 170px;
+    top: -3%;
+  }
+
+  @include mixins.media("md") {
+    height: 220px;
+    width: 340px;
+    top: -12%;
+    right: 1%;
+  }
+
+  @include mixins.media("xl") {
+    height: 262px;
+    width: 400px;
+  }
+}

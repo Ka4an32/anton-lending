@@ -1,0 +1,58 @@
+@use "@/mixins";
+
+.contact-container {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  left: 2%;
+
+  @include mixins.media("md") {
+    left: -0%;
+  }
+
+  @include mixins.media("sx") {
+    left: -0%;
+  }
+}
+
+.contact-action {
+  --size-button: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  bottom: 1%;
+  left: 8%;
+  font-size: 15px;
+
+  text-decoration: underline;
+
+  height: var(--size-button);
+  width: var(--size-button);
+
+  border-radius: 50%;
+  background-color: white;
+  @include mixins.media("md") {
+    --size-button: 144px;
+    font-size: 24px;
+    bottom: 10%;
+    left: 10%;
+  }
+
+  @include mixins.media("xl") {
+    --size-button: 170px;
+  }
+}
+
+.nokia {
+  width: 170px;
+
+  @include mixins.media("md") {
+    width: 380px;
+  }
+
+  @include mixins.media("xl") {
+    width: 450px;
+  }
+}

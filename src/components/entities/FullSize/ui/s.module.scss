@@ -1,0 +1,23 @@
+@use "@/mixins";
+
+.fullsize {
+  position: absolute;
+  width: 157px;
+  height: auto;
+  bottom: 3vh;
+  right: 15px;
+  z-index: -1;
+
+  @include mixins.media("smx") {
+    width: 219px;
+  }
+
+  @include mixins.media("md") {
+    width: 415px;
+    bottom: 0;
+  }
+
+  @include mixins.media("xl") {
+    width: 375px;
+  }
+}

@@ -1,0 +1,27 @@
+@import "../style/vars/index.scss";
+
+html {
+  background-color: #030303;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.helvetica-font {
+  font-family: var(--font-helvetica);
+}
+
+.editorial-font {
+  font-family: var(--font-editorial);
+}
