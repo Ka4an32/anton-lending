@@ -1,0 +1,32 @@
+@use "@/mixins";
+
+.header {
+  text-align: center;
+  max-width: 400px;
+  width: calc(100vw - var(--margin-from-viewport) * 2);
+  margin: var(--margin-from-viewport) auto;
+
+  @include mixins.media("sm") {
+    text-align: left;
+    margin: var(--margin-from-viewport);
+  }
+
+  @include mixins.media("md") {
+    span {
+      font-size: 13px;
+    }
+
+    max-width: 330px;
+  }
+}
+
+.grey {
+  color: #a4a4a4;
+}
+
+.transfer {
+  display: block;
+  @include mixins.media("sm") {
+    display: inline;
+  }
+}

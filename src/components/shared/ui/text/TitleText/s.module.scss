@@ -1,0 +1,12 @@
+@use "@/mixins";
+
+.title {
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+  font-weight: 400;
+
+  @include mixins.media("md") {
+    line-height: 1.4;
+  }
+}

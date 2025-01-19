@@ -1,0 +1,79 @@
+@use "@/mixins";
+
+.first-block {
+  display: flex;
+  flex-direction: column;
+
+  will-change: opacity, transform;
+
+  height: 100vh;
+  min-height: 720px;
+
+  width: 100%;
+  max-width: 1440px;
+
+  @include mixins.media("sm") {
+    min-height: 660px;
+  }
+
+  @include mixins.media("md") {
+    min-height: 900px;
+  }
+
+  @include mixins.media("lg") {
+    min-height: auto;
+  }
+
+  &__body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+    margin-bottom: 11vh;
+
+    @include mixins.media("md") {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    margin: 0 auto;
+    width: 85vw;
+
+    @include mixins.media("sm") {
+      width: 75vw;
+    }
+
+    @include mixins.media("md") {
+      max-width: 715px;
+    }
+
+    @include mixins.media("lg") {
+      margin-bottom: 6vh;
+    }
+
+    @include mixins.media("lg") {
+      max-width: 845px;
+    }
+  }
+}
+
+.title {
+  font-size: 10.8vw;
+  letter-spacing: -0.01rem;
+  line-height: 1.15;
+
+  @include mixins.media("sm") {
+    font-size: 9.4vw;
+  }
+
+  @include mixins.media("md") {
+    font-size: 68px;
+  }
+
+  @include mixins.media("lg") {
+    font-size: 76px;
+  }
+}

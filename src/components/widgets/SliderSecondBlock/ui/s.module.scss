@@ -1,0 +1,33 @@
+@use "@/mixins";
+
+.second-block {
+  width: 100%;
+  height: var(--mobile-slider-block-height);
+  z-index: 1;
+
+  will-change: opacity, transform;
+
+  padding-top: 50px;
+  position: relative;
+
+  padding-left: var(--margin-from-viewport);
+  padding-right: var(--margin-from-viewport);
+  background-color: var(--main-background);
+
+  &__sticky {
+    position: sticky;
+    top: 5px;
+    z-index: 1;
+
+    height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    text-align: center;
+    max-width: 400px;
+    margin: 10px auto 16px;
+  }
+}
