@@ -1,5 +1,8 @@
 const getScrollY = (ref: any, setScrollY: any) => (e: any) => {
-  const bottomPoint = e.currentTarget.scrollY + e.currentTarget.innerHeight;
+  const bottomPoint =
+    e.currentTarget.scrollY +
+    e.currentTarget.outerHeight -
+    e.currentTarget.outerHeight / 10;
   const blockOffset = ref.current.offsetTop + ref.current.offsetHeight;
   const scrollY = bottomPoint - blockOffset;
 

@@ -53,9 +53,15 @@ const Slider: React.FC<{ scroll: number }> = ({ scroll }) => {
             type: "progressbar",
           }}
           spaceBetween={10}
+          breakpoints={{
+            "1440": {
+              slidesPerView: 1.2,
+              spaceBetween: 30,
+            },
+          }}
+          centeredSlides
           onProgress={(_, _progress) => {
-            const progressValue = Math.floor(_progress * 100);
-
+            const progressValue = +(_progress * 100).toFixed(2);
             setProgress(progressValue);
           }}
           freeMode={{
