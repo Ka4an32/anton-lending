@@ -3,8 +3,6 @@ const getScrollY = (ref: any, setScrollY: any) => (e: any) => {
   const blockOffset = ref.current.offsetTop + ref.current.offsetHeight;
   const scrollY = bottomPoint - blockOffset;
 
-  console.log(scrollY);
-
   if (scrollY < e.currentTarget.innerHeight)
     setScrollY(scrollY > 0 ? scrollY : 0);
 };

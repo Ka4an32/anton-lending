@@ -26,8 +26,29 @@
   }
 
   &__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     text-align: center;
     max-width: 400px;
+    line-height: 21px;
     margin: 10px auto 16px;
+    margin-bottom: 20px;
+    min-height: 65px;
+
+    @include mixins.media("sm") {
+      min-height: 45px;
+    }
+  }
+
+  &__title-item {
+    display: flex;
+    overflow: hidden;
+    transform: translateY(15px);
+
+    &_active {
+      transform: translateY(0px);
+      transition: transform 0.3s;
+    }
   }
 }

@@ -54,6 +54,10 @@ const Slider: React.FC<{ scroll: number }> = ({ scroll }) => {
           }}
           spaceBetween={10}
           breakpoints={{
+            "320": {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
             "1440": {
               slidesPerView: 1.2,
               spaceBetween: 30,
