@@ -3,4 +3,24 @@
 .header {
   font-weight: 300;
   text-align: center;
+
+  font-size: 36px;
+  line-height: 45px;
+  letter-spacing: -0.2px;
+
+  @include mixins.media("md") {
+    font-size: 45px;
+    line-height: 51px;
+    max-width: 837px;
+  }
+
+  @include mixins.media("lg") {
+    font-size: 60px;
+    line-height: 69px;
+  }
+
+  @include mixins.media("lg") {
+    font-size: 64px;
+    line-height: 74px;
+  }
 }

@@ -1,5 +1,6 @@
 import "./global.scss";
 import localFont from "next/font/local";
+import React from "react";
 
 const helvetica = localFont({
   src: "../font/helvetica.woff2",

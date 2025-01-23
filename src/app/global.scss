@@ -5,6 +5,18 @@ html {
   overflow-x: hidden;
 }
 
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+.moveable-control-box {
+  display: none !important;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -16,6 +28,10 @@ body {
   align-items: center;
   margin: 0 auto;
   justify-content: center;
+}
+
+a {
+  text-decoration: none;
 }
 
 .helvetica-font {

@@ -1,0 +1,27 @@
+@use "@/mixins";
+
+.gallery {
+  display: grid;
+  width: 100%;
+  gap: 24px;
+  grid-template-columns: 1fr;
+
+  @include mixins.media("md") {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__image-contaier {
+    border-radius: 2%;
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+    height: 120dvw;
+    width: 100%;
+
+    @include mixins.media("md") {
+      height: min(450px, 33.3vw);
+    }
+  }
+}

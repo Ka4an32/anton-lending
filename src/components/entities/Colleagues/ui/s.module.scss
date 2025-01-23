@@ -1,0 +1,15 @@
+@use "@/mixins";
+
+.colleagues {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  row-gap: 36px;
+
+  @include mixins.media("md") {
+    flex-direction: row;
+    justify-content: space-evenly;
+    column-gap: 15px;
+  }
+}
