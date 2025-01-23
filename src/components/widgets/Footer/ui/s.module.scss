@@ -1,0 +1,45 @@
+@use "@/mixins";
+
+.footer {
+  margin-top: 190px;
+  padding: var(--margin-from-viewport);
+
+  text-align: center;
+
+  margin-bottom: 72px;
+
+  @include mixins.media("md") {
+    margin-top: 190px;
+    padding: 0;
+    max-width: 330px;
+  }
+
+  .grey {
+    color: #a4a4a4;
+  }
+
+  ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    text-underline-offset: 3px;
+
+    margin-bottom: 40px;
+
+    li {
+      margin: 6px 0;
+    }
+  }
+
+  &__text {
+    letter-spacing: -0.3px;
+    @include mixins.media("md") {
+      font-size: 13px;
+    }
+  }
+
+  &__text_link {
+    text-decoration: underline;
+  }
+}
