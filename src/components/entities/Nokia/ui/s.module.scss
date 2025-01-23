@@ -16,6 +16,7 @@
 }
 
 .contact-action {
+  font-family: var(--font-fairfax);
   --size-button: 80px;
   display: flex;
   justify-content: center;
@@ -27,6 +28,11 @@
   font-size: 15px;
 
   text-decoration: underline;
+  letter-spacing: -0.5px;
+  color: #232323;
+
+  text-underline-offset: 2px;
+  font-weight: 500;
 
   height: var(--size-button);
   width: var(--size-button);
@@ -38,6 +44,11 @@
     font-size: 24px;
     bottom: 10%;
     left: 10%;
+  }
+
+  @include mixins.media("lg") {
+    font-size: 32px;
+    line-height: 36px;
   }
 
   @include mixins.media("xl") {

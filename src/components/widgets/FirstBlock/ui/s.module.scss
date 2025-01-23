@@ -4,7 +4,8 @@
   display: flex;
   flex-direction: column;
 
-  will-change: opacity, transform;
+  will-change: transform, opacity;
+  transition: all 0.1s;
 
   height: 100vh;
   min-height: 720px;

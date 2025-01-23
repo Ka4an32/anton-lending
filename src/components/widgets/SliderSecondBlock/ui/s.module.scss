@@ -5,7 +5,8 @@
   height: var(--mobile-slider-block-height);
   z-index: 1;
 
-  will-change: opacity, transform;
+  will-change: transform, opacity;
+  transition: all 0.1s;
 
   padding-top: 50px;
   position: relative;

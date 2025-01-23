@@ -14,13 +14,22 @@ const editiroall = localFont({
   variable: "--font-editorial",
 });
 
+const fairfax = localFont({
+  src: "../font/fairfax.ttf",
+  weight: "500",
+  variable: "--font-fairfax",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html className={`${helvetica.variable} ${editiroall.variable}`} lang="en">
+    <html
+      className={`${helvetica.variable} ${editiroall.variable} ${fairfax.variable}`}
+      lang="en"
+    >
       <body>{children}</body>
     </html>
   );

@@ -11,7 +11,7 @@ const ImageBottom = () => {
   return (
     <>
       <div ref={ref} className={s["image-container"]}>
-        <Image src={image} width={195} height={370} alt="image" />
+        <Image priority src={image} width={195} height={370} alt="image" />
       </div>
       <Moveable
         target={ref}
