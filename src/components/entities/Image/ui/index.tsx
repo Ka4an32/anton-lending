@@ -4,6 +4,7 @@ import s from "./s.module.scss";
 import image from "../assets/image.gif";
 import { useRef } from "react";
 import Moveable from "react-moveable";
+import { flushSync } from "react-dom";
 
 const ImageBottom = () => {
   const ref = useRef<HTMLDivElement>(null);
