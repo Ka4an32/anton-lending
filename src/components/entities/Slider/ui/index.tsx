@@ -17,9 +17,9 @@ import Mob3 from "../assets/3_mobile.jpg";
 import Mob4 from "../assets/4_mobile.jpg";
 
 // Desktop slide
-import Des1 from "../assets/1_desk.jpg";
-import Des2 from "../assets/2_desk.jpg";
-import Des3 from "../assets/3_desk.jpg";
+import Des1 from "../assets/1_desk.png";
+import Des2 from "../assets/2_desk.png";
+import Des3 from "../assets/3_desk.png";
 
 import ProgressBar from "./ProgressBar";
 
