@@ -4,9 +4,11 @@ const getScrollY = (ref: any, setScrollY: any) => (e: any) => {
   const scrollY = bottomPoint - blockOffset;
 
   if (scrollY < e.currentTarget.outerHeight) {
-    setScrollY(scrollY > 0 ? scrollY : 0);
+    setScrollY(scrollY < 0 ? 0 : scrollY);
     ref.current.style.willChange = "transform, opacity";
-  } else {
+  }
+
+  if (scrollY < 0 || scrollY > e.currentTarget.outerHeight) {
     ref.current.style.willChange = "auto";
   }
 };

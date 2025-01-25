@@ -3,9 +3,18 @@ import steave from "../assets/steave.jpg";
 
 import s from "./s.module.scss";
 
-const Steave: React.FC = () => {
+const Steave: React.FC<{
+  mousePosition: { x: number; y: number };
+}> = ({ mousePosition: { x, y } }) => {
   return (
-    <div className={s["steave-container"]}>
+    <div
+      style={{
+        transform: `perspective(450px) rotateX(${-y / 2}deg) rotateY(${
+          x / 2
+        }deg)`,
+      }}
+      className={s["steave-container"]}
+    >
       <Image
         className={s["steave"]}
         style={{ objectFit: "cover" }}

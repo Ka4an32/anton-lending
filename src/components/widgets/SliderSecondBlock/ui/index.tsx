@@ -5,6 +5,7 @@ import s from "./s.module.scss";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import getScrollY from "@/components/shared/helper/getScrollY";
 import dynamic from "next/dynamic";
+import { useMediaQuery } from "usehooks-ts";
 
 const Slider = dynamic(() => import("@/components/entities/Slider/ui"), {
   ssr: false,
@@ -20,6 +21,7 @@ const SliderSecondBlock = () => {
   const [scrollSliderY, setScrollSliderY] = useState(0);
   const [scrollY, setScrollY] = useState(0.01);
   const [opacity, setOpacity] = useState(0);
+  const isMobile = useMediaQuery("(max-width: 1023px)");
 
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -46,13 +48,17 @@ const SliderSecondBlock = () => {
 
     if (ref.current) {
       window.addEventListener("scroll", func);
-      window.addEventListener("scroll", getScroll);
+      if (!isMobile) {
+        window.addEventListener("scroll", getScroll);
+      } else {
+        window.removeEventListener("scroll", getScroll);
+      }
     }
     return () => {
       window.removeEventListener("scroll", func);
       window.removeEventListener("scroll", getScroll);
     };
-  }, []);
+  }, [isMobile]);
 
   useEffect(() => {
     setOpacity(

@@ -14,8 +14,6 @@ const ThirdBlock = () => {
   const [opacity, setOpacity] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
-  console.log(scroll);
-
   useEffect(() => {
     const scrollProcentFunc = () =>
       setScroll(Math.floor((window.scrollY / ref.current!.offsetTop) * 100));

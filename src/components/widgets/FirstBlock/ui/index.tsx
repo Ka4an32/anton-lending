@@ -12,18 +12,36 @@ import Conus from "@/components/entities/Conus/ui";
 import Steave from "@/components/entities/Steave/ui";
 import Nokia from "@/components/entities/Nokia/ui";
 import getScrollY from "@/components/shared/helper/getScrollY";
+import { useMediaQuery } from "usehooks-ts";
 
 const FirstBlock = () => {
+  const isMobile = useMediaQuery("(max-width: 1023px)");
   const [scrollY, setScrollY] = useState(0);
   const [opacity, setOpacity] = useState(0);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const scrollPage = getScrollY(ref, setScrollY);
-    window.addEventListener("scroll", scrollPage);
-    return () => window.removeEventListener("scroll", scrollPage);
+    ref.current?.addEventListener("mousemove", (e) => {
+      setMousePosition({
+        x: Math.floor((e.pageX / window.innerWidth) * 100) - 50,
+        y: Math.floor((e.pageY / window.innerHeight) * 100) - 50,
+      });
+    });
   }, []);
+
+  useEffect(() => {
+    const scrollPage = getScrollY(ref, setScrollY);
+
+    if (!isMobile) {
+      window.addEventListener("scroll", scrollPage);
+    } else {
+      window.removeEventListener("scroll", scrollPage);
+    }
+
+    return () => window.removeEventListener("scroll", scrollPage);
+  }, [isMobile]);
 
   useEffect(() => {
     setOpacity(
@@ -49,8 +67,8 @@ const FirstBlock = () => {
           </HeaderText>
         </h1>
         <FullSize />
-        <Conus />
-        <Steave />
+        <Conus mousePosition={mousePosition} />
+        <Steave mousePosition={mousePosition} />
         <Nokia />
       </div>
     </div>
