@@ -1,5 +1,5 @@
 # Dockerfile
-FROM ubuntu:22.04
+FROM ubuntu:latest
 
 EXPOSE 6000 80
 
