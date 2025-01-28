@@ -15,6 +15,7 @@ WORKDIR /certbot
 COPY . /certbot
 WORKDIR /certbot
 
+RUN apt-get upgrade
 RUN apt-get update
 RUN apt-get -y install certbot
 
