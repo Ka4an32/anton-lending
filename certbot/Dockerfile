@@ -15,8 +15,11 @@ WORKDIR /certbot
 COPY . /certbot
 WORKDIR /certbot
 
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/*
+RUN apt-get clean
+RUN apt-get update 
 RUN apt-get upgrade
-RUN apt-get update
 RUN apt-get -y install certbot
 
 # запускаем скрипт генерации
