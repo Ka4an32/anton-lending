@@ -24,7 +24,7 @@ const ThirdBlock = () => {
     };
     const getScroll = getScrollY(ref, setSlideScroll);
 
-    window.addEventListener("scroll", (e) => {
+    window.addEventListener("scroll", () => {
       const scrollValue = -(ref.current!.offsetTop - window.scrollY);
       if (scrollValue > 0) {
         const scrollProcent =

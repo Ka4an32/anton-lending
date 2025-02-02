@@ -5,7 +5,7 @@ import s from "./s.module.scss";
 
 const Tablet: React.FC<{
   mousePosition: { x: number; y: number };
-}> = ({ mousePosition: { x, y } }) => {
+}> = () => {
   return (
     <div className={s["tablet-container"]}>
       <Image

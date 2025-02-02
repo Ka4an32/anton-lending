@@ -5,7 +5,7 @@ import s from "./s.module.scss";
 
 const Spacer: React.FC<{
   mousePosition: { x: number; y: number };
-}> = ({ mousePosition: { x, y } }) => {
+}> = () => {
   return (
     <div className={s["spacer-container"]}>
       <Image
