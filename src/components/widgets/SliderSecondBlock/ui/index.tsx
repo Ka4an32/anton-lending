@@ -15,6 +15,7 @@ const texts = [
   "Launched an analogue of perplexity app inside MTS with 20m mau, +12% Conversion rate in leads",
   "Tested hypotheses for ai vision analysis startup",
   "Launched an edtech product for a UK startup, designed 100+ screens and 10+ flows",
+  "Product concept for mts futurecrew, Worked for more than 2 months on visual concepts, formation of the target application",
 ];
 
 const SliderSecondBlock = () => {
@@ -79,17 +80,21 @@ const SliderSecondBlock = () => {
         <h2 className={s["second-block__title"]}>
           {texts.map((text, i) => {
             const index = i + 1;
-            const part = Math.ceil((scrollSliderY - 1) / 33) || 1;
-            const partScrollPocent = ((scrollSliderY - 33 * i) / 33) * 100;
+            const oneItemsProcent = 100 / texts.length;
+            const part = Math.ceil((scrollSliderY - 1) / oneItemsProcent) || 1;
+            const partScrollPocent =
+              ((scrollSliderY - oneItemsProcent * i) / oneItemsProcent) * 100;
 
             const opacityVector = ((partScrollPocent - 50) * 2) / 100;
             let opacity;
 
-            if (part !== texts.length) {
+            if (part === 1) {
+              opacity = 1 - opacityVector * 2;
+            } else if (part === texts.length) {
+              opacity = (opacityVector + 0.5) * 2;
+            } else {
               opacity =
                 opacityVector < 0 ? 1 + opacityVector : 1 - opacityVector;
-            } else {
-              opacity = (opacityVector + 0.5) * 2;
             }
 
             return (

@@ -3,6 +3,7 @@ import s from "./s.module.scss";
 
 import Igor from "../assets/igor.jpeg";
 import Alexey from "../assets/alexey.jpeg";
+import { useMediaQuery } from "usehooks-ts";
 
 const colleagues = [
   {
@@ -19,11 +20,17 @@ const colleagues = [
   },
 ];
 
-const Colleagues = () => {
+const Colleagues: React.FC<{ offsetScroll: number }> = ({ offsetScroll }) => {
+  const isMobile = useMediaQuery("(max-width: 767px)");
+
   return (
     <div className={s["colleagues"]}>
       {colleagues.map((colleague) => (
-        <ColleaguesCard key={colleague.name} {...colleague} />
+        <ColleaguesCard
+          isActive={offsetScroll >= (isMobile ? 75 : 90)}
+          key={colleague.name}
+          {...colleague}
+        />
       ))}
     </div>
   );

@@ -6,27 +6,47 @@
   height: 90px;
   width: 137px;
 
-  right: 2%;
-  top: 0;
-
-  z-index: -1;
-  transform: rotate(50deg);
-
-  @include mixins.media("smx") {
-    height: 120px;
-    width: 170px;
-    top: -3%;
+  div {
+    width: 100%;
+    height: 100%;
   }
 
+  z-index: -1;
+
+  right: 6%;
+  top: -1%;
+
   @include mixins.media("md") {
-    height: 220px;
-    width: 340px;
-    top: -12%;
-    right: 1%;
+    height: 180px;
+    width: 280px;
+    top: -10%;
+    right: 4%;
+
+    .conus {
+      animation: livitation 90s 0.8s linear infinite forwards;
+    }
+  }
+
+  @include mixins.media("lg") {
+    top: 2%;
   }
 
   @include mixins.media("xl") {
-    height: 262px;
-    width: 400px;
+    height: 200px;
+    width: 315px;
+  }
+}
+
+@keyframes livitation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-60deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
   }
 }

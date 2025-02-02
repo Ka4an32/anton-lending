@@ -10,15 +10,32 @@ import getScrollY from "@/components/shared/helper/getScrollY";
 
 const ThirdBlock = () => {
   const [scroll, setScroll] = useState(0);
+  const [scrollBlock, setScrollBlock] = useState(0);
   const [slideScroll, setSlideScroll] = useState(0);
   const [opacity, setOpacity] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const scrollProcentFunc = () =>
-      setScroll(Math.floor((window.scrollY / ref.current!.offsetTop) * 100));
-
+    const scrollProcentFunc = () => {
+      const value = Math.floor((window.scrollY / ref.current!.offsetTop) * 100);
+      if (value > 100) setScroll(100);
+      if (value < 0) setScroll(0);
+      if (value > 0 && value < 100) setScroll(value);
+    };
     const getScroll = getScrollY(ref, setSlideScroll);
+
+    window.addEventListener("scroll", (e) => {
+      const scrollValue = -(ref.current!.offsetTop - window.scrollY);
+      if (scrollValue > 0) {
+        const scrollProcent =
+          (scrollValue + window.innerHeight) / ref.current!.scrollHeight;
+
+        if (scrollProcent > 1) setScrollBlock(100);
+        if (scrollProcent < 0.5) setScrollBlock(0);
+        if (scrollProcent > 0.5 && scrollProcent < 1)
+          setScrollBlock(Math.floor(scrollProcent * 100));
+      }
+    });
 
     window.addEventListener("scroll", scrollProcentFunc);
     window.addEventListener("scroll", getScroll);
@@ -41,22 +58,32 @@ const ThirdBlock = () => {
         opacity: opacity,
       }}
       ref={ref}
-      className={s["third-block"]}
+      className={s["third-block-wrapper"]}
     >
-      <Smile />
-      <h2>
-        <HeaderText className={s["third-block__text"]}>
-          <span className={scroll >= 93 ? s["active"] : ""}>
-            I&nbsp;saved over 100 million for a&nbsp;top-1 bank
-            by&nbsp;launching an&nbsp;MLP product,
-          </span>{" "}
-          <span className={scroll >= 99 ? s["active"] : ""}>
-            worked at&nbsp;mts, sberbank, consulting, launched 10+&nbsp;products
-            for b2c startups
-          </span>
-        </HeaderText>
-      </h2>
-      <Star />
+      <div className={s["third-block"]}>
+        <Smile isActive={scroll >= 90} />
+        <h2>
+          <HeaderText className={s["third-block__text"]}>
+            <span
+              className={`${scroll >= 92 ? s["active"] : ""} ${
+                scrollBlock >= 55 ? s["light"] : ""
+              }`}
+            >
+              I&nbsp;saved over 100 million for a&nbsp;top-1 bank
+              by&nbsp;launching an&nbsp;MLP product,
+            </span>{" "}
+            <span
+              className={`${scroll >= 98 ? s["active"] : ""} ${
+                scrollBlock >= 75 ? s["light"] : ""
+              }`}
+            >
+              worked at&nbsp;mts, sberbank, consulting, launched
+              10+&nbsp;products for b2c startups
+            </span>
+          </HeaderText>
+        </h2>
+        <Star isActive={scroll >= 98} />
+      </div>
     </section>
   );
 };

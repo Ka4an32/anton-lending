@@ -8,17 +8,32 @@ import { useEffect, useRef, useState } from "react";
 import getScrollY from "@/components/shared/helper/getScrollY";
 
 const RecomedationsBlock = () => {
+  const [offsetScroll, setOffsetScroll] = useState(0);
   const [slideScroll, setSlideScroll] = useState(0);
   const [opacity, setOpacity] = useState(0);
 
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const scrollProcentFunc = () => {
+      const value = Math.floor(
+        (-(ref.current!.offsetTop - window.outerHeight - window.scrollY) /
+          window.outerHeight) *
+          100
+      );
+
+      if (value <= 0) setOffsetScroll(0);
+      if (value >= 100) setOffsetScroll(100);
+      if (value > 0 && value < 100) setOffsetScroll(value);
+    };
+
     const getScroll = getScrollY(ref, setSlideScroll);
 
+    window.addEventListener("scroll", scrollProcentFunc);
     window.addEventListener("scroll", getScroll);
     return () => {
-      window.addEventListener("scroll", getScroll);
+      window.removeEventListener("scroll", scrollProcentFunc);
+      window.removeEventListener("scroll", getScroll);
     };
   }, []);
 
@@ -38,12 +53,16 @@ const RecomedationsBlock = () => {
       className={s["fourty-block"]}
     >
       <Triangle />
-      <h2 className={s["fourty-block__title"]}>
+      <h2
+        className={`${s["fourty-block__title"]} ${
+          offsetScroll >= 50 ? s["active"] : ""
+        }`}
+      >
         <HeaderText>
           Recommendations <br /> from my colleagues
         </HeaderText>
       </h2>
-      <Colleagues />
+      <Colleagues offsetScroll={offsetScroll} />
     </section>
   );
 };

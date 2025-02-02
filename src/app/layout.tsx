@@ -14,22 +14,35 @@ const editiroall = localFont({
   variable: "--font-editorial",
 });
 
-const fairfax = localFont({
-  src: "../font/fairfax.ttf",
-  weight: "500",
-  variable: "--font-fairfax",
-});
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      className={`${helvetica.variable} ${editiroall.variable} ${fairfax.variable}`}
-      lang="en"
-    >
+    <html className={`${helvetica.variable} ${editiroall.variable}`} lang="en">
+      <head>
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon-96x96.png"
+          sizes="96x96"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <meta name="apple-mobile-web-app-title" content="Portfolio" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <title>Anthony Belyi</title>
+        <meta
+          name="description"
+          content="Product Manager and Principle Product Designer with 5 years experience"
+        />
+      </head>
       <body>{children}</body>
     </html>
   );

@@ -3,11 +3,16 @@
 .star-block {
   position: relative;
   left: 20vw;
-  bottom: 40px;
+  bottom: 25px;
   width: 240px;
   height: 240px;
 
-  transform: rotate(25deg);
+  transition: transform 0.5s;
+  transform: scale(0.001);
+
+  &.active {
+    transform: scale(1);
+  }
 
   @include mixins.media("md") {
     width: 350px;

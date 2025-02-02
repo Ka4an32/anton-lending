@@ -13,6 +13,11 @@ import Steave from "@/components/entities/Steave/ui";
 import Nokia from "@/components/entities/Nokia/ui";
 import getScrollY from "@/components/shared/helper/getScrollY";
 import { useMediaQuery } from "usehooks-ts";
+import Durov from "@/components/entities/Durov/ui";
+import Crumbs from "@/components/entities/Crumbs/ui";
+import Zuckerberg from "@/components/entities/Zuckerberg/ui";
+import Spacer from "@/components/entities/Spacer/ui";
+import Tablet from "@/components/entities/Tablet/ui";
 
 const FirstBlock = () => {
   const isMobile = useMediaQuery("(max-width: 1023px)");
@@ -24,12 +29,14 @@ const FirstBlock = () => {
 
   useEffect(() => {
     ref.current?.addEventListener("mousemove", (e) => {
-      setMousePosition({
-        x: Math.floor((e.pageX / window.innerWidth) * 100) - 50,
-        y: Math.floor((e.pageY / window.innerHeight) * 100) - 50,
-      });
+      if (!isMobile) {
+        setMousePosition({
+          x: Math.floor((e.pageX / window.innerWidth) * 100) - 50,
+          y: Math.floor((e.pageY / window.innerHeight) * 100) - 50,
+        });
+      }
     });
-  }, []);
+  }, [isMobile]);
 
   useEffect(() => {
     const scrollPage = getScrollY(ref, setScrollY);
@@ -69,7 +76,12 @@ const FirstBlock = () => {
         <FullSize />
         <Conus mousePosition={mousePosition} />
         <Steave mousePosition={mousePosition} />
-        <Nokia />
+        <Durov mousePosition={mousePosition} />
+        <Crumbs mousePosition={mousePosition} />
+        <Zuckerberg mousePosition={mousePosition} />
+        <Spacer mousePosition={mousePosition} />
+        <Tablet mousePosition={mousePosition} />
+        <Nokia mousePosition={mousePosition} />
       </div>
     </div>
   );

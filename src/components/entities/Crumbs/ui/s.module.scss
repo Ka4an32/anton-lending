@@ -1,0 +1,59 @@
+@use "@/mixins";
+
+.crumbs-container {
+  position: absolute;
+  width: 76px;
+  height: 85px;
+  bottom: 10%;
+  right: -5%;
+
+  @include mixins.media("md") {
+    width: 134px;
+    height: 150px;
+    bottom: 5%;
+    right: 0%;
+  }
+
+  @include mixins.media("lg") {
+    bottom: -5%;
+    right: 5%;
+  }
+}
+
+.crumbs-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  @include mixins.media("md") {
+    animation: livitationH 6s 0.7s ease-in-out infinite forwards;
+  }
+}
+
+@keyframes livitationR {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes livitationH {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}

@@ -8,9 +8,10 @@ const ColleaguesCard: React.FC<{
   name: string;
   role: string;
   text: string;
-}> = ({ name, role, text, img }) => {
+  isActive: boolean;
+}> = ({ name, role, text, img, isActive }) => {
   return (
-    <article className={s["colleagues-card"]}>
+    <article className={`${s["colleagues-card"]} ${isActive && s["active"]}`}>
       <header>
         <Image className={s["colleagues-card__img"]} src={img} alt={name} />
         <h3>

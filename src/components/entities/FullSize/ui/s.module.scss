@@ -4,20 +4,18 @@
   position: absolute;
   width: 157px;
   height: auto;
-  bottom: 3vh;
-  right: 15px;
   z-index: -1;
 
-  @include mixins.media("smx") {
-    width: 219px;
-  }
+  bottom: 25%;
+  right: 4%;
 
   @include mixins.media("md") {
-    width: 415px;
-    bottom: 0;
+    width: 315px;
   }
 
-  @include mixins.media("xl") {
-    width: 375px;
+  @include mixins.media("lg") {
+    width: 275px;
+    right: 52%;
+    bottom: 0;
   }
 }

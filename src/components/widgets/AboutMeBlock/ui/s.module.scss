@@ -15,8 +15,14 @@
   &__title {
     max-width: 800px;
     margin-bottom: 32px;
+    min-height: 270px;
+
     @include mixins.media("md") {
       margin-bottom: 64px;
+      min-height: 153px;
+    }
+    @include mixins.media("lg") {
+      min-height: 300px;
     }
   }
 }

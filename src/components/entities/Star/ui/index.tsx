@@ -1,16 +1,16 @@
 import Image from "next/image";
-import star from "../assets/star.gif";
+import star from "../assets/star.webp";
 import s from "./s.module.scss";
 
-const Star = () => {
+const Star: React.FC<{ isActive: boolean }> = ({ isActive }) => {
   return (
-    <div className={s["star-block"]}>
+    <div className={`${s["star-block"]} ${isActive && s["active"]}`}>
       <Image
         width={300}
         height={300}
         priority
+        src={star}
         className={s["star"]}
-        src={star.src}
         alt="star"
       />
     </div>

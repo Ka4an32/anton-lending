@@ -1,0 +1,47 @@
+@use "@/mixins";
+
+.durov-container {
+  position: absolute;
+  width: 142px;
+  height: 81px;
+
+  div {
+    width: 100%;
+    height: 100%;
+  }
+
+  z-index: 1;
+  bottom: 0;
+  left: 50%;
+
+  animation: showIn 0.7s 0.1s ease-out forwards;
+
+  .durov {
+    transform: translateX(-50%);
+
+    @include mixins.media("lg") {
+      transform: translateX(0);
+    }
+  }
+
+  @include mixins.media("md") {
+    left: 52%;
+    height: 158px;
+    width: 245px;
+  }
+
+  @include mixins.media("xl") {
+    height: 171px;
+    width: 287px;
+    right: 20%;
+  }
+}
+
+@keyframes showIn {
+  0% {
+    transform: translateY(50vh) scale(0.001);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}

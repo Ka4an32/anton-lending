@@ -1,27 +1,24 @@
 @use "@/mixins";
 
 .triangle-container {
-  width: 200px;
-  height: 200px;
-
-  transform: rotate(-170deg);
+  width: 124px;
+  height: 121px;
 
   img {
+    transition: transform 0.5s;
+    &:hover {
+      transform: scale(1.1);
+    }
+
     width: 100%;
     height: 100%;
   }
 
   @include mixins.media("md") {
-    position: absolute;
-    width: 240px;
-    height: 240px;
+    width: 200px;
+    height: 196px;
 
     top: 0;
     left: 2%;
-  }
-
-  @include mixins.media("lg") {
-    width: 320px;
-    height: 320px;
   }
 }

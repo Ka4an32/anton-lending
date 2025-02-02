@@ -2,27 +2,46 @@
 
 .steave-container {
   position: absolute;
+
+  div {
+    width: 100%;
+    height: 100%;
+  }
+
   width: 142px;
   height: 81px;
 
-  top: 5%;
+  top: 1%;
   left: -1%;
 
-  @include mixins.media("smx") {
-    height: 108px;
-    width: 182px;
-  }
+  animation: showIn 0.7s ease-out forwards;
 
   @include mixins.media("md") {
-    height: 158px;
-    width: 245px;
-    top: 7%;
+    height: 110px;
+    width: 200px;
+    top: 2%;
+  }
+
+  @include mixins.media("lg") {
+    height: 121px;
+    width: 237px;
+    left: -2%;
+    top: 25%;
   }
 
   @include mixins.media("xl") {
     height: 171px;
     width: 287px;
     left: -2%;
-    top: 12%;
+    top: 25%;
+  }
+}
+
+@keyframes showIn {
+  0% {
+    transform: translateX(-50vw) scale(0.001);
+  }
+  100% {
+    transform: translateX(0) scale(1);
   }
 }

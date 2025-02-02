@@ -3,67 +3,69 @@
 .contact-container {
   position: absolute;
   display: flex;
-  bottom: 0;
-  left: 2%;
+  bottom: 25.3%;
+  left: 1%;
+
+  z-index: 2;
+
+  cursor: grab;
 
   @include mixins.media("md") {
     left: -0%;
-  }
-
-  @include mixins.media("sx") {
-    left: -0%;
-  }
-}
-
-.contact-action {
-  font-family: var(--font-fairfax);
-  --size-button: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  position: absolute;
-  bottom: 1%;
-  left: 8%;
-  font-size: 15px;
-
-  text-decoration: underline;
-  letter-spacing: -0.5px;
-  color: #232323;
-
-  text-underline-offset: 2px;
-  font-weight: 500;
-
-  height: var(--size-button);
-  width: var(--size-button);
-
-  border-radius: 50%;
-  background-color: white;
-  @include mixins.media("md") {
-    --size-button: 144px;
-    font-size: 24px;
-    bottom: 10%;
-    left: 10%;
   }
 
   @include mixins.media("lg") {
-    font-size: 32px;
-    line-height: 36px;
+    left: 1%;
+    bottom: 14%;
   }
+}
 
-  @include mixins.media("xl") {
-    --size-button: 170px;
-  }
+.nokia-wrapper {
+  animation: livitationH 5s ease-in-out infinite forwards;
 }
 
 .nokia {
   width: 170px;
 
+  animation: livitationR 5s ease-in-out infinite forwards;
+
   @include mixins.media("md") {
-    width: 380px;
+    width: 280px;
   }
 
   @include mixins.media("xl") {
-    width: 450px;
+    width: 310px;
+  }
+}
+
+@keyframes livitationR {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-2deg);
+  }
+
+  75% {
+    transform: rotate(2deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes livitationH {
+  0% {
+    transform: translateY(-10px);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(-10px);
   }
 }

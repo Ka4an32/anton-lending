@@ -1,0 +1,27 @@
+@use "@/mixins";
+
+.spacer-container {
+  display: none;
+  position: absolute;
+
+  animation: showIn 0.5s ease-out forwards;
+
+  @include mixins.media("lg") {
+    display: block;
+    top: -3%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    height: 201px;
+    width: 209px;
+  }
+}
+
+@keyframes showIn {
+  0% {
+    transform: translateY(-30vh) translateX(-50%) scale(0.001);
+  }
+  100% {
+    transform: translateX(0) translateX(-50%) scale(1);
+  }
+}

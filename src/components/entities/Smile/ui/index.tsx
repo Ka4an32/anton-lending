@@ -3,9 +3,9 @@ import smile from "../assets/smile.png";
 
 import s from "./s.module.scss";
 
-const Smile = () => {
+const Smile: React.FC<{ isActive: boolean }> = ({ isActive }) => {
   return (
-    <div className={s["smile-block"]}>
+    <div className={`${s["smile-block"]} ${isActive && s["active"]}`}>
       <Image className={s["smile"]} src={smile} alt="smile" />
     </div>
   );

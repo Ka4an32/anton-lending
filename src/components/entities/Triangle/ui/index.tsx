@@ -1,10 +1,11 @@
-import triangle from "../assets/triangle.gif";
+import Image from "next/image";
+import galka from "../assets/galka.png";
 import s from "./s.module.scss";
 
 const Triangle = () => {
   return (
     <div className={s["triangle-container"]}>
-      <img src={triangle.src} alt="triangle" />
+      <Image src={galka} alt="galka" />
     </div>
   );
 };

@@ -16,6 +16,11 @@
       font-size: 13px;
     }
     max-width: 330px;
+    z-index: 3;
+  }
+
+  @include mixins.media("lg") {
+    position: absolute;
   }
 }
 

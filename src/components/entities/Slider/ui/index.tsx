@@ -11,20 +11,22 @@ import { useMediaQuery } from "usehooks-ts";
 import s from "./s.module.scss";
 
 // Mobile slide
-import Mob1 from "../assets/1_mobile.jpg";
-import Mob2 from "../assets/2_mobile.jpg";
-import Mob3 from "../assets/3_mobile.jpg";
-import Mob4 from "../assets/4_mobile.jpg";
+import Mob1 from "../assets/1_mobile.png";
+import Mob2 from "../assets/2_mobile.png";
+import Mob3 from "../assets/3_mobile.png";
+import Mob4 from "../assets/4_mobile.png";
+import Mob5 from "../assets/5_mobile.png";
 
 // Desktop slide
 import Des1 from "../assets/1_desk.png";
 import Des2 from "../assets/2_desk.png";
 import Des3 from "../assets/3_desk.png";
+import Des4 from "../assets/4_desk.png";
 
 import ProgressBar from "./ProgressBar";
 
-const imagesMobile = [Mob1, Mob2, Mob3, Mob4];
-const imagesDesktop = [Des1, Des2, Des3];
+const imagesMobile = [Mob1, Mob2, Mob3, Mob4, Mob5];
+const imagesDesktop = [Des1, Des2, Des3, Des4];
 
 const Slider: React.FC<{ scroll: number }> = ({ scroll }) => {
   const isMobile = useMediaQuery("(max-width: 1023px)");
