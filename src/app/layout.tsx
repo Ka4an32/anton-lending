@@ -42,6 +42,11 @@ export default function RootLayout({
           name="description"
           content="Product Manager and Principle Product Designer with 5 years experience"
         />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: dark)"
+          content="black"
+        />
       </head>
       <body>{children}</body>
     </html>
