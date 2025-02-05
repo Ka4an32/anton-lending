@@ -76,7 +76,7 @@ const FirstBlock = () => {
         <FullSize />
         <Conus mousePosition={mousePosition} />
         <Steave mousePosition={mousePosition} />
-        <Durov mousePosition={mousePosition} />
+        <Durov />
         <Crumbs mousePosition={mousePosition} />
         <Zuckerberg mousePosition={mousePosition} />
         <Spacer mousePosition={mousePosition} />

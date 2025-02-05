@@ -7,12 +7,15 @@ import s from "./s.module.scss";
 import Smile from "@/components/entities/Smile/ui";
 import Star from "@/components/entities/Star/ui";
 import getScrollY from "@/components/shared/helper/getScrollY";
+import { useMediaQuery } from "usehooks-ts";
 
 const ThirdBlock = () => {
   const [scroll, setScroll] = useState(0);
   const [scrollBlock, setScrollBlock] = useState(0);
   const [slideScroll, setSlideScroll] = useState(0);
   const [opacity, setOpacity] = useState(0);
+  const isMobile = useMediaQuery("(max-width: 1023px)");
+
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -38,10 +41,15 @@ const ThirdBlock = () => {
     });
 
     window.addEventListener("scroll", scrollProcentFunc);
-    window.addEventListener("scroll", getScroll);
+
+    if (!isMobile) {
+      window.addEventListener("scroll", getScroll);
+    } else {
+      window.removeEventListener("scroll", getScroll);
+    }
     return () => {
       window.removeEventListener("scroll", scrollProcentFunc);
-      window.addEventListener("scroll", getScroll);
+      window.removeEventListener("scroll", getScroll);
     };
   }, []);
 

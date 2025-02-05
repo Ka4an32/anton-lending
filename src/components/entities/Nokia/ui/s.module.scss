@@ -3,8 +3,8 @@
 .contact-container {
   position: absolute;
   display: flex;
-  bottom: 25.3%;
-  left: 1%;
+  bottom: 26.3%;
+  left: 3%;
 
   z-index: 2;
 
@@ -16,7 +16,7 @@
 
   @include mixins.media("lg") {
     left: 1%;
-    bottom: 14%;
+    bottom: 18%;
   }
 }
 
@@ -25,16 +25,16 @@
 }
 
 .nokia {
-  width: 170px;
+  width: 120px;
 
   animation: livitationR 5s ease-in-out infinite forwards;
 
   @include mixins.media("md") {
-    width: 280px;
+    width: 240px;
   }
 
   @include mixins.media("xl") {
-    width: 310px;
+    width: 250px;
   }
 }
 

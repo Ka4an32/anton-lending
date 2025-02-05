@@ -3,9 +3,9 @@
 .star-block {
   position: relative;
   left: 20vw;
-  bottom: 25px;
-  width: 240px;
-  height: 240px;
+  bottom: 35px;
+  width: 220px;
+  height: 220px;
 
   transition: transform 0.5s;
   transform: scale(0.001);
@@ -17,14 +17,15 @@
   @include mixins.media("md") {
     width: 350px;
     height: 350px;
+    bottom: 25px;
   }
 
   @include mixins.media("lg") {
     position: absolute;
-    width: 400px;
-    height: 400px;
+    width: 375px;
+    height: 375px;
     left: unset;
-    bottom: 2%;
+    bottom: 3%;
     right: 0;
   }
 }

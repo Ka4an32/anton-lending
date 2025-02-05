@@ -10,12 +10,21 @@
   position: relative;
 
   background-color: var(--main-background);
-  padding: 20px var(--margin-from-viewport) 0;
+  padding: 40px var(--margin-from-viewport) 0;
 
   &__title {
+    transition: all 0.5s;
+    transform: translateY(30%);
+    opacity: 0;
+
     max-width: 800px;
     margin-bottom: 32px;
     min-height: 270px;
+
+    &.active {
+      transform: translateY(0);
+      opacity: 1;
+    }
 
     @include mixins.media("md") {
       margin-bottom: 64px;

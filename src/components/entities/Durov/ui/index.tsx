@@ -3,16 +3,10 @@ import durov from "../assets/durov.jpg";
 
 import s from "./s.module.scss";
 
-const Durov: React.FC<{
-  mousePosition: { x: number; y: number };
-}> = ({ mousePosition: { x, y } }) => {
+const Durov: React.FC<{}> = () => {
   return (
     <div className={s["durov-container"]}>
-      <div
-        style={{
-          transform: `translate(${x / 10}px, ${y / 5}px)`,
-        }}
-      >
+      <div>
         <Image
           className={s["durov"]}
           style={{ objectFit: "contain" }}

@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "next": "15.1.4",
+    "number-formatter": "^1.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-moveable": "^0.56.0",
-    "react-type-animation": "^3.2.0",
     "sass": "^1.83.1",
     "sharp": "^0.33.5",
     "swiper": "^11.2.1",

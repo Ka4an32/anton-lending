@@ -1,0 +1,19 @@
+@use "@/mixins";
+
+.grid-block {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(min, 684px);
+  gap: 24px;
+
+  & > div {
+    display: flex;
+    width: 100%;
+    border-radius: 8px;
+    background-color: var(--grid-background);
+  }
+
+  @include mixins.media("md") {
+    grid-template-columns: minmax(min-content, 684px) minmax(min-content, 684px);
+  }
+}

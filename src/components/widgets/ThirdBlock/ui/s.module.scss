@@ -4,8 +4,11 @@
   width: 100%;
   z-index: 1;
   background-color: var(--main-background);
-  height: max(230dvh, 1000px);
-  position: relative;
+
+  @include mixins.media("md") {
+    height: max(230dvh, 1000px);
+    position: relative;
+  }
 }
 
 .third-block {
@@ -22,16 +25,26 @@
   align-items: center;
   justify-content: center;
 
-  position: sticky;
-  top: 0px;
-
   max-width: 1440px;
   padding: 0 var(--margin-from-viewport);
 
+  @include mixins.media("md") {
+    position: sticky;
+    top: 0px;
+  }
+
   &__text {
     span {
-      transition: opacity 0.7s;
-      opacity: 0;
+      & {
+        font-size: 32px;
+        opacity: 0;
+        transition: opacity 0.7s;
+
+        @include mixins.media("md") {
+          font-size: inherit;
+        }
+      }
+
       &.active {
         opacity: 0.3;
         &.light {

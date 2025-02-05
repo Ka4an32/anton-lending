@@ -19,6 +19,7 @@ const texts = [
 ];
 
 const SliderSecondBlock = () => {
+  const [offsetScroll, setOffsetScroll] = useState(0);
   const [scrollSliderY, setScrollSliderY] = useState(0);
   const [scrollY, setScrollY] = useState(0.01);
   const [opacity, setOpacity] = useState(0);
@@ -28,6 +29,22 @@ const SliderSecondBlock = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
+    const scrollProcentFunc = () => {
+      const value = Math.floor(
+        (-(
+          containerRef.current!.offsetTop -
+          window.outerHeight -
+          window.scrollY
+        ) /
+          window.outerHeight) *
+          100
+      );
+      if (value <= 0) setOffsetScroll(0);
+      if (value >= 100) setOffsetScroll(100);
+      if (value > 0 && value < 100) setOffsetScroll(value);
+    };
+
+    window.addEventListener("scroll", scrollProcentFunc);
     const func = () => {
       const offsetTop = ref.current!.parentElement!.offsetTop + 50;
       if (window.scrollY >= offsetTop) {
@@ -49,6 +66,7 @@ const SliderSecondBlock = () => {
 
     if (ref.current) {
       window.addEventListener("scroll", func);
+      window.addEventListener("scroll", scrollProcentFunc);
       if (!isMobile) {
         window.addEventListener("scroll", getScroll);
       } else {
@@ -56,6 +74,7 @@ const SliderSecondBlock = () => {
       }
     }
     return () => {
+      window.removeEventListener("scroll", scrollProcentFunc);
       window.removeEventListener("scroll", func);
       window.removeEventListener("scroll", getScroll);
     };
@@ -77,7 +96,11 @@ const SliderSecondBlock = () => {
       className={s["second-block"]}
     >
       <section ref={ref} className={s["second-block__sticky"]}>
-        <h2 className={s["second-block__title"]}>
+        <h2
+          className={`${s["second-block__title"]} ${
+            offsetScroll >= 35 ? s["active"] : ""
+          }`}
+        >
           {texts.map((text, i) => {
             const index = i + 1;
             const oneItemsProcent = 100 / texts.length;

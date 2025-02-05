@@ -52,7 +52,7 @@ const RecomedationsBlock = () => {
       ref={ref}
       className={s["fourty-block"]}
     >
-      <Triangle />
+      <Triangle offsetScroll={offsetScroll} />
       <h2
         className={`${s["fourty-block__title"]} ${
           offsetScroll >= 50 ? s["active"] : ""
