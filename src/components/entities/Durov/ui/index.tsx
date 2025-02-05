@@ -3,7 +3,7 @@ import durov from "../assets/durov.jpg";
 
 import s from "./s.module.scss";
 
-const Durov: React.FC<{}> = () => {
+const Durov: React.FC = () => {
   return (
     <div className={s["durov-container"]}>
       <div>

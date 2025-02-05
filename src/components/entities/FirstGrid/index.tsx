@@ -28,8 +28,8 @@ const GridItem: React.FC<{
     value?: string
   ) {
     let n = 0;
-    let t = Math.round(time / (num / step));
-    let interval = setInterval(() => {
+    const t = Math.round(time / (num / step));
+    const interval = setInterval(() => {
       n = n + step;
       if (n >= num) {
         clearInterval(interval);

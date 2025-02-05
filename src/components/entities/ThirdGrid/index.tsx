@@ -13,7 +13,7 @@ import Slide2 from "./assets/slide2.png";
 import Slide3 from "./assets/slide3.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, FreeMode } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 
 const ThirdGrid = () => {
   return (
