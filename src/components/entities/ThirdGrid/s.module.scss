@@ -19,12 +19,13 @@
   }
 
   .item {
-    width: fit-content;
+    min-width: 340px;
     height: 216px;
     object-position: right;
-    object-fit: cover;
+    object-fit: contain;
 
     @include mixins.media("md") {
+      min-width: unset;
       width: 237px;
     }
   }

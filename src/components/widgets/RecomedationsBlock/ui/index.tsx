@@ -6,8 +6,10 @@ import Triangle from "@/components/entities/Triangle/ui";
 import Colleagues from "@/components/entities/Colleagues/ui";
 import { useEffect, useRef, useState } from "react";
 import getScrollY from "@/components/shared/helper/getScrollY";
+import { useMediaQuery } from "usehooks-ts";
 
 const RecomedationsBlock = () => {
+  const isMobile = useMediaQuery("(max-width: 1023px)");
   const [offsetScroll, setOffsetScroll] = useState(0);
   const [slideScroll, setSlideScroll] = useState(0);
   const [opacity, setOpacity] = useState(0);
@@ -29,13 +31,18 @@ const RecomedationsBlock = () => {
 
     const getScroll = getScrollY(ref, setSlideScroll);
 
+    if (!isMobile) {
+      window.addEventListener("scroll", getScroll);
+    } else {
+      window.removeEventListener("scroll", getScroll);
+    }
+
     window.addEventListener("scroll", scrollProcentFunc);
-    window.addEventListener("scroll", getScroll);
     return () => {
       window.removeEventListener("scroll", scrollProcentFunc);
       window.removeEventListener("scroll", getScroll);
     };
-  }, []);
+  }, [isMobile]);
 
   useEffect(() => {
     setOpacity(

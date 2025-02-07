@@ -4,7 +4,7 @@ import TitleText from "@/components/shared/ui/text/TitleText";
 const links = [
   {
     name: "Contact with me",
-    link: "https://t.me/likeyungviciouss",
+    link: "https://t.me/productanthony",
   },
   {
     name: "portfolio",
@@ -33,8 +33,7 @@ const Footer = () => {
         ))}
       </ul>
       <TitleText className={s["footer__text"]}>
-        anton belyi — PRODUCT MANAGER and principle product designer. ——
-        currently at mts{" "}
+        anton belyi — PRODUCT MANAGER and principle product designer, ex mts{" "}
         <a target="_blank" href="https://futurecrew.ru" className={s.grey}>
           futurecrew
         </a>{" "}
@@ -44,17 +43,10 @@ const Footer = () => {
           href="https://developers.sber.ru/portal/products/pulse"
           className={s.grey}
         >
-          sberbank
+          sberbank,{" "}
         </a>
-        , @{" "}
-        <a target="_blanlk" href="https://humbleteam.com" className={s.grey}>
-          Humbleteam
-        </a>{" "}
-        eu consulting product agency, @{" "}
-        <a target="_blank" href="https://aic.ru" className={s.grey}>
-          aic
-        </a>{" "}
-        top-1 design agency, 10+ startups // etc
+        10+ startups // etc. experience in IOS development, search engines,
+        social apps, fintech, e-com, b2b saas products
         <br />
         <br />
         all gifs i took from 69pixel studio, thank you

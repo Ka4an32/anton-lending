@@ -15,7 +15,7 @@ const colleagues = [
   {
     img: Alexey,
     name: "Alexey samoylov",
-    role: "Techlead at mts ai",
+    role: "Techlead & Product Owner at Mts Innovations",
     text: "«Anton has a good understanding of product development and communicates with frontend and backend developers in the same language»",
   },
 ];

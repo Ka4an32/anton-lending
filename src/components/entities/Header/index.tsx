@@ -6,8 +6,7 @@ const Header = () => {
   return (
     <h3 className={s.header}>
       <TitleText>
-        anton belyi — PRODUCT MANAGER and principle product designer. ——
-        currently at mts{" "}
+        anton belyi — PRODUCT MANAGER and principle product designer, ex mts{" "}
         <a target="_blank" href="https://futurecrew.ru" className={s.grey}>
           futurecrew
         </a>{" "}
@@ -17,18 +16,10 @@ const Header = () => {
           href="https://developers.sber.ru/portal/products/pulse"
           className={s.grey}
         >
-          sberbank
+          sberbank,{" "}
         </a>
-        , @{" "}
-        <a target="_blanlk" href="https://humbleteam.com" className={s.grey}>
-          Humbleteam
-        </a>{" "}
-        eu consulting product agency, @{" "}
-        <a target="_blank" href="https://aic.ru" className={s.grey}>
-          aic
-        </a>{" "}
-        top-1 design agency,{" "}
-        <span className={s.transfer}>10+ startups // etc</span>
+        10+ startups // etc. experience in IOS development, search engines,
+        social apps, fintech, e-com, b2b saas products
       </TitleText>
     </h3>
   );

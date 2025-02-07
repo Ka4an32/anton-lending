@@ -11,6 +11,7 @@ import Dashboard from "../assets/dashboard.jpg";
 import Code from "../assets/code.jpg";
 import Diagramm from "../assets/diagramm.jpg";
 import ImageBottom from "@/components/entities/Image/ui";
+import FourtyGrid from "@/components/entities/FourtyGrid/ui";
 
 const AboutMeBlock = () => {
   const [offsetScroll, setOffsetScroll] = useState(0);
@@ -50,6 +51,7 @@ const AboutMeBlock = () => {
       <FirstGrid offsetScroll={offsetScroll} />
       <SecondGrid position="right" image={Dashboard} />
       <ThirdGrid />
+      <FourtyGrid />
       <SecondGrid position="left" image={Code} />
       <SecondGrid position="center" image={Diagramm} />
       <ImageBottom />
