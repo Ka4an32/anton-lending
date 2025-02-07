@@ -9,7 +9,7 @@ const ProgressBar: React.FC<{ scroll: number }> = ({ scroll }) => {
 
   useEffect(() => {
     if (scroll) {
-      swiper?.setProgress(scroll / 100, 50);
+      swiper?.setProgress(scroll / 100, 0);
     }
   }, [scroll, swiper]);
 
