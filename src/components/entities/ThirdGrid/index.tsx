@@ -11,6 +11,8 @@ import Tools from "./assets/tools.jpg";
 import Slide1 from "./assets/slide1.png";
 import Slide2 from "./assets/slide2.png";
 import Slide3 from "./assets/slide3.png";
+import Slide4 from "./assets/slide4.png";
+import Slide5 from "./assets/slide5.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -42,6 +44,7 @@ const ThirdGrid = () => {
               centeredSlides: true,
             },
           }}
+          loop
           modules={[Autoplay]}
           autoplay={{
             delay: 1500,
@@ -57,6 +60,12 @@ const ThirdGrid = () => {
           </SwiperSlide>
           <SwiperSlide className={s["slide-container"]}>
             <Image className={s["slide"]} src={Slide3} alt="item" />
+          </SwiperSlide>
+          <SwiperSlide className={s["slide-container"]}>
+            <Image className={s["slide"]} src={Slide4} alt="item" />
+          </SwiperSlide>
+          <SwiperSlide className={s["slide-container"]}>
+            <Image className={s["slide"]} src={Slide5} alt="item" />
           </SwiperSlide>
         </Swiper>
       </div>

@@ -3,6 +3,7 @@
 .first-block {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   min-height: max(100dvh, 830px);
   width: 100%;
