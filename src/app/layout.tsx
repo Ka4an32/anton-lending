@@ -51,6 +51,7 @@ export default function RootLayout({
           content="Product Manager and Principle Product Designer with 5 years experience"
         />
         <meta property="og:image" content="/opengraph.jpg" />
+        <meta property="twitter:image" content="/opengraph.jpg" />
       </head>
       <body>{children}</body>
     </html>
