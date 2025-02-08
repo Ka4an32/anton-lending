@@ -46,12 +46,12 @@ export default function RootLayout({
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://belyi.tech/" />
         <meta property="og:title" content="Antony Belyi Protfolio" />
+        <meta name="twitter:card" content="summary_large_image"></meta>
         <meta
           property="og:description"
           content="Product Manager and Principle Product Designer with 5 years experience"
         />
         <meta property="og:image" content="/opengraph.jpg" />
-        <meta property="twitter:image" content="/opengraph.jpg" />
       </head>
       <body>{children}</body>
     </html>
