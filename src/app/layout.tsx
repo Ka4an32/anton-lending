@@ -45,7 +45,7 @@ export default function RootLayout({
         <meta name="theme-color" content="black" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://belyi.tech/" />
-        <meta property="og:title" content="Antony Belyi Protfolio" />
+        <meta property="og:title" content="Anthony Belyi Protfolio" />
         <meta name="twitter:card" content="summary_large_image"></meta>
         <meta
           property="og:description"
