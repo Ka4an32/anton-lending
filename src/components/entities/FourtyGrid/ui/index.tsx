@@ -2,8 +2,8 @@ import s from "./s.module.scss";
 
 import CashItem from "../assets/cash-item.png";
 import CashMenu from "../assets/cash-menu.jpg";
-import Crypto from "../assets/crypto.jpg";
-import Crypto2 from "../assets/crypto2.jpg";
+import Crypto from "../assets/crypto.png";
+import Crypto2 from "../assets/crypto2.png";
 import Menu from "../assets/menu.jpg";
 import Account from "../assets/account.jpg";
 import Cash from "../assets/cash.jpg";
